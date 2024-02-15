@@ -1,0 +1,349 @@
+:root{
+    --primario: #5a5a3e;
+    --primarioOscuro: #4b4b33;
+    --primarioOscuroTransp:rgba(75, 75, 51, 0.733);
+
+    --secundario: #a08f61;
+    --secundarioOscuro: #886a3d;
+    --secundarioOscuroTransp: #886a3d7e;
+    --blanco: #fff;
+    --negro: #000;
+    --gris:#e7e7e7;
+
+    --azul: #84aee6;
+
+    --fuentePrincipal: 'Protest Guerrilla', sans-serif;
+
+      
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*globales*/
+body{
+    background-image: linear-gradient(to top, var(--primarioOscuroTransp) 0%, var(--gris) 70% );
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    
+}
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,122,0.54); /* -- es prefijo para uso exclusivo en ciertos navegadores no compatibles con la version original*/
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,122,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,122,0.54);
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+    
+    font-family: var(--fuentePrincipal);
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.4rem;
+}
+
+/*HEADER*/
+.header{
+    background-image: linear-gradient(to top, var(--secundario) 0%, var(--azul) 90% );
+}
+
+.header__a{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    width: 10%;
+    margin:3rem 0;
+}
+
+
+/*NAVEGACION*/
+.navegacion{
+    background-image: linear-gradient(to top, var(--secundarioOscuro) 0%, var(--secundario) 90% );
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /*separacion forma nueva*/
+    margin-bottom: 4rem;
+}
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    border-radius: 2rem;
+    transition: font-size 0.2s ease;
+    padding: 1rem;
+    /*margin-right: 2rem; separacion forma vieja*/
+}
+
+.navegacion__enlace:hover{
+    color: var(--primario);
+    background-color: var(--secundario);
+    font-size: 3.5rem;
+    border: 2px solid var(--primarioOscuro);
+}
+
+.navegacion__enlace--activo{
+    color: var(--primario);
+}
+
+
+/* CONTENEDOR */
+.contenedor__h1{
+    color: var(--primario);
+}
+
+/*FOOTER*/
+.footer{
+    background-image: linear-gradient(to top, var(--primarioOscuro) 0%, var(--primario) 90% );
+    padding: 0.1rem 0;
+    margin-top: 4rem;
+}
+
+.footer__texto{
+    font-weight: 400;
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+}
+
+
+/*PRODUCTOS*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto{
+    background-color: var(--primarioOscuroTransp);
+    padding: 1rem;
+    border-radius: 1rem;
+    
+}
+.producto__imagen{
+    border-radius: 1rem ;
+    width: 100%;
+}
+.producto__informacion{
+
+}
+.producto__nombre{
+    font-family: var(--fuentePrincipal);
+    font-size: 2.8rem;
+    margin: 1rem 0;
+}
+.producto__precio{
+    font-family: var(--fuentePrincipal);
+    font-size: 2.3rem;
+    margin: 0;
+    color: var(--primarioOscuro);
+    line-height: 1.2;
+}
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.grafico--camisas{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node{
+    grid-row: 8/9;
+    grid-column: 1/3;
+    background-image: url(../img/grafico2.jpg);
+}
+
+@media (min-width: 768px) {
+    .grafico--node{
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+/* NOSOTROS */
+
+.nosotros{
+    display: grid;
+    grid-template-rows:repeat(2, auto) ;
+}
+.nosotros__contenido{
+
+}
+
+.nosotros__contenido p{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.nosotros__imagen{
+    grid-row: 1/2;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .nosotros__contenido{
+    
+    }
+    
+    .nosotros__contenido p{
+        font-size: 1.6rem;
+    }
+
+    .nosotros__imagen{
+        grid-column: 2/3;
+        margin: auto 0;
+        border-radius: 1rem;
+    }
+}
+
+/* NOSOTROS BLOQUES POR QUE COMPRAR */
+
+.comprar__titulo{
+    color: var(--primarioOscuro);
+}
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.bloque{
+    text-align: center;
+    background-image: linear-gradient(to top, var(--secundarioOscuro) 0%, var(--secundario) 90% );
+    border-radius: 1rem;
+}
+.bloque__imagen{
+    width: 100%;
+}
+.bloque__titulo{
+    margin: 0;
+    color: var(--primarioOscuro);
+}
+@media (min-width: 768px) {
+    .bloques{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* SECCION PRODUCTO INDEPENDIENTE */
+.camisa__imagen{
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        padding: 0 2rem;
+    }
+    .camisa__imagen{
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 1rem;
+    }
+}
+.formulario{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 2rem;
+}
+.formulario__campo{
+    border: transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--gris);
+    margin: 1rem 0;
+    color: var(--primarioOscuro);
+    font-size: 2rem;
+}
+.formulario__campo:focus{
+    border: 2px solid var(--primarioOscuro);
+    /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); */
+}
+@media (min-width: 768px) {
+    .formulario__campo{
+        font-size: 2rem;
+    }
+}
+.formulario__submit{
+    font-family: var(--fuentePrincipal);
+    color: var(--primario);
+    font-size: 2rem;
+    border-radius: 1rem;
+    background-color: var(--gris);
+    border: none;
+    padding: 1rem;
+    transition: font-size 0.2s ease;
+    text-align: center;
+    margin-top: 4rem;
+    grid-column: 1/2;
+}
+
+.formulario__submit:hover{
+    color: var(--primario);
+    background-color: var(--secundarioOscuroTransp);
+    border: 2px solid var(--primarioOscuro);
+    cursor: pointer;
+    font-size: 2.2rem;
+}
+@media (min-width: 768px) {
+    .formulario__submit{
+        margin-top: 5rem;
+    }
+}
